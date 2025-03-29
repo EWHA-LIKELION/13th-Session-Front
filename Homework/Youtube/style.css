@@ -14,62 +14,48 @@ body {
   flex-wrap: wrap;
   padding: 6px 16px;
   background: #212121;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  height: auto;
-  overflow: hidden;
+  height: 45px;
   gap: 10px;
 }
-
 .header-left img {
   height: 30px;
-  object-fit: contain;
 }
-
 .header-center {
   display: flex;
   justify-content: center;
   flex: 1;
-  min-width: 200px;
+  width: 500px;
 }
-
 .search-bar {
   display: flex;
   width: 100%;
   max-width: 400px;
   border: 1px solid #555;
   border-radius: 20px;
-  overflow: hidden;
   background: #121212;
 }
-
 .search-bar input {
   flex: 1;
   padding: 8px 12px;
-  border: none;
-  outline: none;
   font-size: 14px;
   background-color: transparent;
+  border: none;
   color: white;
 }
-
 .search-bar button {
   padding: 6px 12px;
   border: none;
   background: none;
-  cursor: pointer;
 }
-
 .search-bar button img {
   width: 18px;
   height: 18px;
   filter: invert(1);
 }
-
 .header-right {
   display: flex;
   align-items: center;
 }
-
 .profile-img {
   width: 28px;
   height: 28px;
@@ -149,26 +135,24 @@ body {
   font-size: 14px;
   color: #ccc;
 }
-
 .comment-profile {
   width: 36px;
   height: 36px;
   border-radius: 50%;
   object-fit: cover;
 }
-
 .comment-text {
   margin: 8px 0;
   font-size: 15px;
-  color: #eee;
+  color: #aaa;
 }
-
 .comment-actions {
   display: flex;
   gap: 15px;
   font-size: 13px;
   color: #aaa;
 }
+
 
 /* 영상 정보 영역 */
 .video-info {
@@ -263,7 +247,6 @@ body {
   padding: 8px 16px;
   border: none;
   border-radius: 20px;
-  cursor: pointer;
   font-weight: bold;
   font-size: 13px;
 }
@@ -273,8 +256,6 @@ body {
   background: #1e1e1e;
   padding: 16px;
   border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  margin-top: 0;
 }
 
 .recommended h3 {
@@ -283,19 +264,16 @@ body {
   margin-bottom: 16px;
   color: white;
 }
-
 .recommended-video {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 20px;
 }
-
 .thumb img {
   width: 168px;
   height: 94px;
   border-radius: 8px;
-  object-fit: cover;
 }
 
 .video-details {
@@ -304,20 +282,17 @@ body {
   justify-content: center;
   height: 94px;
 }
-
 .video-details .title {
   font-weight: bold;
   font-size: 15px;
   color: white;
   margin-bottom: 4px;
 }
-
 .video-details .channel {
   font-size: 13px;
   color: #aaa;
   margin-bottom: 2px;
 }
-
 .video-details .meta {
   font-size: 12px;
   color: #777;
@@ -345,7 +320,6 @@ body {
     }
   }
   
-
   .header {
     flex-direction: row;
     flex-wrap: wrap;
@@ -358,9 +332,6 @@ body {
     margin: 10px 0;
   }
 
-  .video-buttons {
-    grid-template-columns: repeat(2, 1fr);
-  }
 
 
 
