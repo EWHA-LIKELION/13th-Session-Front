@@ -234,7 +234,7 @@ header .icons .fa-search {
 .upNext .item .video iframe {
   width: 100%;
   height: auto;
-  max-height: 150px; /* 비디오의 최대 높이 제한 */
+  max-height: 150px;
   margin-right: 6px;
 }
 
@@ -272,7 +272,7 @@ header .icons .fa-search {
 /* 추천과 댓글을 묶는 새로운 section */
 .recommendAndComments {
   display: flex;
-  flex-direction: column; /* 세로 배치 */
+  flex-direction: column;
 }
 
 .recommendAndComments .upNext,
