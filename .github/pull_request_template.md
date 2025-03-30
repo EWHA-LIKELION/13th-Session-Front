@@ -6,14 +6,14 @@
 ### 1) 전체적인 레이아웃 구조
 
 - body 태그 내에서 `display: flex;`를 적용하여 기본적으로 수평 배치를 유지.
-- 주요 섹션은 container1 (메인 콘텐츠)과 container2 (부가 정보 및 추천 콘텐츠)로 구분하여 관리.
+- 주요 섹션은 container1과 container2로 구분하여 관리.
 - `position: fixed;`를 활용하여 헤더가 항상 화면 상단에 고정되도록 구성.
 
 ### 2) header 디자인
 
 - header 요소는 `display: flex;`와 `justify-content: space-between;`을 사용하여 로고, 검색 아이콘, 프로필 이미지 간격을 균등 배치.
 - `position: fixed;` 속성을 사용하여 헤더가 항상 상단에 위치하도록 고정.
-- 아이콘(search.png, user_profile.png)에 `filter: drop-shadow();`를 적용하여 그림자 효과 추가.
+- 아이콘(user_profile.png)에 `filter: drop-shadow();`를 적용하여 그림자 효과 추가.
 
 ### 3) 동영상 플레어
 
