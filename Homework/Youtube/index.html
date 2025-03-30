@@ -1,3 +1,232 @@
-<!-- 유튜브 클론코딩 과제 html 파일입니다! -->
-<!-- css 파일은 직접 만들어 주세요. -->
-<!-- 이 주석은 삭제하고 과제 진행하시면 됩니다 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Youtube Mobile</title>
+    <script
+      src="https://kit.fontawesome.com/808fb06856.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <i class="fab fa-youtube"></i>
+        <span class="title">Youtube</span>
+      </div>
+      <div class="icons">
+        <i class="fas fa-search"></i>
+        <i class="fas fa-ellipsis-v"></i>
+      </div>
+    </header>
+
+    <section class="player">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/iDjQSdN_ig8?si=TJy5MLOJuyFgoBHb"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </section>
+
+    <div class="container">
+      <div class="mainContent">
+        <section class="info">
+          <div class="metadata">
+            <ul class="hashtags">
+              <li>#오마이걸</li>
+              <li>#NONSTOP</li>
+              <li>#OHMYGIRL</li>
+            </ul>
+            <div class="titleAndButton">
+              <span class="title clamp">
+                [MV] OH MY GIRL(오마이걸) _ Nonstop(살짝 설렜어) <br />
+
+                <br />K-POP Wonderland, 1theK K-POP의 모든 즐거움을
+                1theK(원더케이)에서 만나보세요! :) Welcome to the official
+                YouTube channel of K-POP Wonderland, 1theK "1theK Originals"
+                Subscribe 👉 https://www.youtube.com/1theKOriginal...
+                #오마이걸#살짝설렜어#OHMYGIRL#NONSTOP#NEWRELEASE#MV#1theK#원더케이
+                ▶1theK YT : / 1thek ▶1theK FB : / 1thek ▶1theK TW : / 1thek
+                ▶1theK Kakao : https://goo.gl/otRpZc ▶1theK TikTok :
+                https://vt.tiktok.com/2mSMBS
+              </span>
+              <button class="moreBtn">
+                <i class="fas fa-caret-down"></i>
+              </button>
+            </div>
+            <span class="views">조회수 97,984,781회</span><br />
+            <span class="views">2020.4.27.</span>
+          </div>
+          <ul class="actions">
+            <li>
+              <button>
+                <i class="active fas fa-thumbs-up"></i><span>120만</span>
+              </button>
+            </li>
+            <li>
+              <button><i class="fas fa-thumbs-down"></i><span>0</span></button>
+            </li>
+            <li>
+              <button><i class="fas fa-share"></i><span>Share</span></button>
+            </li>
+            <li>
+              <button><i class="fas fa-plus"></i><span>Save</span></button>
+            </li>
+            <li>
+              <button>
+                <i class="fab fa-font-awesome-flag"></i><span>Report</span>
+              </button>
+            </li>
+          </ul>
+          <div class="channel">
+            <div class="metadata">
+              <img src="image/검정.png" alt="" />
+              <div class="info">
+                <span class="name"><b>1 theK (원더케이)</b></span>
+                <span class="subscribers">2490M subscribers</span>
+              </div>
+            </div>
+            <button class="subscribe">Subscribe</button>
+          </div>
+        </section>
+        <section class="recommendAndComments">
+          <section class="upNext">
+          <span class="title"
+            ><h3><b>Recommened</b></h3></span
+          >
+          <ul>
+            <li class="item">
+              <div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/udGwca1HBM4?si=5t_izjVZwemkZBwr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+              <div class="itemInfo">
+                <span class="title"
+                  >[MV] OH MY GIRL(오마이걸) _ The fifth season(다섯 번째 계절)
+                  (SSFWL)</span
+                >
+                <span class="name">OH MY GIRL</span>
+                <span class="views">조회수 39,469,797회<br />2019. 5. 8.</span>
+              </div>
+            </li>
+            <li class="item">
+              <div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/nfMUtFhwhDs?si=fEy5VyMZVoXLCvtp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+              <div class="itemInfo">
+                <span class="title"
+                  >(MV)오마이걸(OH MY GIRL)_Dun Dun Dance</span
+                >
+                <span class="name">OH MY GIRL</span>
+                <span class="views">
+                  조회수 60,623,601회<br />2021. 5. 10.</span
+                >
+              </div>
+            </li>
+            <li class="item">
+              <div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/eDEFolvLn0A?si=cLsurU9tHnJT41xy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+              <div class="itemInfo">
+                <span class="title">IZ*ONE (아이즈원) - 'FIESTA' MV</span>
+                <span class="name">Stone Music Entertainment</span>
+                <span class="views"
+                  >조회수 117,153,471회<br />2020. 2. 17.</span
+                >
+              </div>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <section class="comments">
+        <h3>comments</h3>
+        <ul>
+          <li class="comment">
+            <img src="image/검정.png" alt="" class="avatar" />
+            <div class="commentContent">
+              <span class="username">dhakrrjf</span>
+              <span class="views">1주 전</span><br/>
+              <p>정말 멋진 영상이네요!</p>
+              <button class="replyBtn">답글 (1)</button>
+              <div class="likeDislike">
+                <button class="likeBtn">
+                  <i class="fas fa-thumbs-up"></i>
+                  <span class="likeCount">120</span>
+                </button>
+                <button class="dislikeBtn">
+                  <i class="fas fa-thumbs-down"></i>
+                  <span class="dislikeCount">0</span>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="comment">
+            <img src="image/검정.png" alt="" class="avatar" />
+            <div class="commentContent">
+              <span class="username">oh mygirl</span>
+              <span class="views">2주 전</span><br />
+              <p>좋은 노래 감사합니다!</p>
+              <button class="replyBtn">답글 (3)</button>
+              <div class="likeDislike">
+                <button class="likeBtn">
+                  <i class="fas fa-thumbs-up"></i>
+                  <span class="likeCount">98</span>
+                </button>
+                <button class="dislikeBtn">
+                  <i class="fas fa-thumbs-down"></i>
+                  <span class="dislikeCount">1</span>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="comment">
+            <img src="image/검정.png" alt="" class="avatar" />
+            <div class="commentContent">
+              <span class="username">girlsohmy</span>
+              <span class="views">2주 전</span><br />
+              <p>정말 멋진 영상이네요! 감사합니다!</p>
+              <button class="replyBtn">답글 (5)</button>
+              <div class="likeDislike">
+                <button class="likeBtn">
+                  <i class="fas fa-thumbs-up"></i>
+                  <span class="likeCount">150</span>
+                </button>
+                <button class="dislikeBtn">
+                  <i class="fas fa-thumbs-down"></i>
+                  <span class="dislikeCount">0</span>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="comment">
+            <img src="image/검정.png" alt="" class="avatar" />
+            <div class="commentContent">
+              <span class="username">abcdcff</span>
+              <span class="views">3주 전</span><br />
+              <p>댓글댓글</p>
+              <button class="replyBtn">답글</button>
+              <div class="likeDislike">
+                <button class="likeBtn">
+                  <i class="fas fa-thumbs-up"></i>
+                  <span class="likeCount">200</span>
+                </button>
+                <button class="dislikeBtn">
+                  <i class="fas fa-thumbs-down"></i>
+                  <span class="dislikeCount">10</span>
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+        </section>
+    </div>
+  </body>
+</html>
