@@ -1,3 +1,157 @@
-<!-- 유튜브 클론코딩 과제 html 파일입니다! -->
-<!-- css 파일은 직접 만들어 주세요. -->
-<!-- 이 주석은 삭제하고 과제 진행하시면 됩니다 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>Youtube</title>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="comment.css">
+    <link rel="stylesheet" href="recommend.css">
+</head>
+<body>
+    <!-- nav -->
+    <nav>
+        <div id="left-container">
+            <img src="../../../250330_Homework Image/Header_icon/1. menu.png" id="menu">
+            <img src="../../../250330_Homework Image/Header_icon/2. youtube-color.png" id="logo">
+        </div>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="search" class="search-input" placeholder="검색">
+                <div class="icons-wrapper">
+                    <img src="../../../250330_Homework Image/Header_icon/3. keyboard.png" id="keyboard">
+                    <div class="divider"></div>
+                    <div class="magnifier-container">
+                        <img src="../../../250330_Homework Image/Header_icon/4. magnifier.png" id="magnifier">
+                    </div>
+                </div>
+            </div>
+            <div class="mic-container">
+                <img src="../../../250330_Homework Image/Header_icon/5. microphone-filled.png" id="mic">
+            </div>
+        </div>
+        <div id="right-container">
+            <span id="make">+ 만들기</span>
+            <img src="../../../250330_Homework Image/Header_icon/6. bell.png" id="bell">
+        </div>
+    </nav>
+    <!-- main -->
+    <main>
+        <div class="video-container">
+            <div class="video-player">
+                <iframe src="https://www.youtube.com/embed/eWAdpUyzCkI" frameborder="0" allow="fullscreen"></iframe>
+            </div>
+            <div class="video-title">
+                <h1>JENNIE, Doechii - ExtraL (Official Video)</h1>
+            </div>
+            <div class="video-info">
+                <span class="channel-info">
+                    <img src="../../../250330_Homework Image/Main/Jennie.jpg" class="profile-pic">
+                    <span class="channel-name">JENNIE</span>
+                    <span class="subscriber-count">14.3M subscribers</span>
+                    <button class="subscribe-btn">구독</button>
+                </span>
+                <span class="interaction-buttons">
+                    <span id="thumbs">
+                        <img src="../../../250330_Homework Image/Main/thumbs-up.png" class="thumbs-up">201만&nbsp;&nbsp;&nbsp;
+                        <img src="../../../250330_Homework Image/Main/thumbs-down.png" class="thumbs-down">
+                    </span>
+                    <button class="share-btn">공유</button>
+                    <button class="save-btn">오프라인 저장</button>
+                    <button class="more-btn"> •••</button>
+                </span>
+            </div>
+                <div class="video-stats">
+                    <span style="font-weight: bold;">조회수 45,545,795 회&nbsp;&nbsp;&nbsp;</span>
+                    <span>1개월 전&nbsp;&nbsp;&nbsp;</span>
+                    <span>뮤직비디오 인기 58위</span>
+                    <p class="video-description">
+                        Official music video for 'ExtraL' by JENNIE & Doechii out now: <a href="https://jennie.lnk.to/extral">https://jennie.lnk.to/extral</a><br/><br/>
+                        'Ruby' The 1st Studio Album out now: <a href="https://jennie.lnk.to/ruby">https://jennie.lnk.to/ruby</a> 
+                </div>
+                <div class="comments-section">
+                    <h3>댓글</h3>
+                    <div class="comment">
+                        <img src="../../../250330_Homework Image/Main/profile.jpg" class="comment-profile">
+                        <div class="comment-content">
+                            <span class="comment-author">shiwamdasharara93</span>
+                            <p class="comment-text">Dress To Impress ✨ 0:30</p>
+                            <span class="comment-reply">한국어로 번역</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="related-videos">
+            <h3>관련 동영상</h3>
+            <div class="video-list">
+                <div class="video-item">
+                    <img src="../../../250330_Homework Image/Thumbnail/1_Mantra.jpg" alt="Mantra" class="video-thumbnail">
+                    <div class="video-details">
+                        <h4>JENNIE - Mantra (Official Video)</h4>
+                        <p>JENNIE</p>
+                        <p>조회수 1.6억회 • 5개월 전</p>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <img src="../../../250330_Homework Image/Thumbnail/0_Mantra.jpg" class="video-thumbnail">
+                    <div class="video-details">
+                        <h4>JENNIE - Mantra (Performance Video)</h4>
+                        <p>JENNIE</p>
+                        <p>조회수 2490만회 • 5개월 전</p>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <img src="../../../250330_Homework Image/Thumbnail/2_Love-hangover.jpg" class="video-thumbnail">
+                    <div class="video-details">
+                        <h4>JENNIE & Dominic Fike - Love-Hangover (Official Video)</h4>
+                        <p>JENNIE</p>
+                        <p>조회수 4093만회 • 1개월 전</p>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <img src="../../../250330_Homework Image/Thumbnail/3_ZEN.jpg" class="video-thumbnail">
+                    <div class="video-details">
+                        <h4>JENNIE - ZEN (Official Video)</h4>
+                        <p>JENNIE</p>
+                        <p>조회수 4302만회 • 2개월 전</p>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <img src="../../../250330_Homework Image/Thumbnail/4_F.T.S.jpg" class="video-thumbnail">
+                    <div class="video-details">
+                        <h4>JENNIE - F.T.S (Official Lyric Video)</h4>
+                        <p>JENNIE</p>
+                        <p>조회수 114만회 • 2개월 전</p>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <img src="../../../250330_Homework Image/Thumbnail/4_F.T.S.jpg" class="video-thumbnail">
+                    <div class="video-details">
+                        <h4>JENNIE - Seoul City (Official Lyric Video)</h4>
+                        <p>JENNIE</p>
+                        <p>조회수 352만회 • 3주 전</p>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <img src="../../../250330_Homework Image/Thumbnail/5_likejennie.jpg" class="video-thumbnail">
+                    <div class="video-details">
+                        <h4>JENNIE - like JENNIE (Official Video)</h4>
+                        <p>JENNIE</p>
+                        <p>조회수 540만회 • 3주 전</p>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <img src="../../../250330_Homework Image/Thumbnail/4_F.T.S.jpg" class="video-thumbnail">
+                    <div class="video-details">
+                        <h4>JENNIE - Seoul City (Official Lyric Video)</h4>
+                        <p>JENNIE</p>
+                        <p>조회수 352만회 • 3주 전</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,159 @@
+/* main */
+body{
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+main {
+    display: flex;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.video-container {
+    flex: 2;
+    margin-right: 20px;
+}
+
+.video-player {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.video-player iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-info {
+    margin-top: 20px;
+    display: flex;    
+}
+
+.video-info h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.channel-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.channel-name {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.subscriber-count {
+    font-size: 14px;
+    color: #606060;
+    margin-right: 10px;
+}
+
+.subscribe-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 19px;
+    cursor: pointer;
+    margin-right: 350px;
+}
+
+#thumbs{
+    display: flex;
+    align-items: center;
+    background-color: #E6E6E6;
+    padding: 5px;
+    border-radius: 20px;
+    font-size: small;
+    font-;
+}
+
+.thumbs-down{
+    width: 20px;
+}
+.thumbs-up{
+    width: 20px;
+}
+
+.interaction-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.interaction-buttons button {
+    padding: 15 px;
+    background-color: #E6E6E6;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    color: #606060;
+}
+
+.like-btn {
+    color: #ff0000;
+}
+
+.video-stats {
+    background-color: rgba(228, 228, 228, 0.934);
+    font-size: 14px;
+    padding: 15px 15px 1px 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.video-description {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.related-videos {
+    flex: 1;
+}
+
+.related-videos h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.video-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.video-item {
+    display: flex;
+    gap: 10px;
+}
+
+.video-thumbnail {
+    width: 168px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.video-details h4 {
+    font-size: 14px;
+    margin: 0 0 5px 0;
+}
+
+.video-details p {
+    font-size: 12px;
+    color: #606060;
+    margin: 0;
+}
