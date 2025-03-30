@@ -388,12 +388,35 @@ header .icons .fa-search {
   flex-basis: 35%;
 }
 
-@media screen and (min-width: 768px) {
-  .infoAndUpNext {
-    flex-direction: column;
+@media screen and (min-width: 1024px) {
+  .mainContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "info info"
+      "comments recommend";
+    gap: 20px;
+    align-items: start;
   }
-  .upNext,
+  .info {
+    grid-area: info;
+    align-self: start;
+    margin-top: 0px;
+  }
   .comments {
-    flex-basis: 100%;
+    grid-area: comments;
+    align-self: start;
+    margin-top: 0px;
+  }
+  .recommendAndComments {
+    grid-area: recommend;
+    align-self: start;
+    margin-top: 0px;
+  }
+
+  .comments h3,
+  .recommendAndComments h3,
+  .upNext h3 {
+    margin-top: 0;
   }
 }
