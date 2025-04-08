@@ -87,7 +87,7 @@ const printDoneItem = (text) => {
   todoItemds.innerText = text;
 
   // 생성한 span 태그를 클릭하면 toggleDoneToDo 함수가 실행되게 해주세요.
-  todoItemds.addEventListener("click", deleteTodoItem);
+  todoItemds.addEventListener("click", toggleDoneToDo);
 
   // [끝낸 일 삭제 버튼]
   // 생성한 button 태그에 "삭제"라는 텍스트를 넣어주세요.
