@@ -33,44 +33,51 @@
           <p class="section-title">Today's mood</p>
         </div>
         <div class="mood-contents">
-          <button class="sad">
-            <img src="img/sad.svg" alt="sad" />
-          </button>
-          <button class="ordinary">
-            <img src="img/ordinary.svg" alt="ordinary" />
-          </button>
-          <button class="smile">
-            <img src="img/smile.svg" alt="smile" />
-          </button>
-          <button class="happy">
-            <img src="img/happy.svg" alt="happy" />
-          </button>
+          <label
+            ><input type="checkbox" class="single-check" id="sad" />
+            <img src="img/sad.svg" alt="sad" /></label
+          ><br />
+          <label
+            ><input type="checkbox" class="single-check" id="ordinary" /><img
+              src="img/ordinary.svg"
+              alt="ordinary" /></label
+          ><br />
+          <label
+            ><input type="checkbox" class="single-check" id="smile" />
+            <img src="img/smile.svg" alt="smile" /></label
+          ><br />
+          <label
+            ><input type="checkbox" class="single-check" id="happy" />
+            <img src="img/happy.svg" alt="happy"
+          /></label>
         </div>
       </div>
     </section>
     <section class="todo">
       <div class="todo-title">
         <p class="section-title">To-Do</p>
-        <button class="plus">
+        <label class="plus">
+          <input type="checkbox" id="plus" />
           <img src="img/plus1.svg" alt="plus" />
-        </button>
+        </label>
       </div>
 
       <div class="todo-contents">
-        <div class="todo-write">
-          <input class="explain" placeholder="할 일을 입력하세요." />
-          <button class="add">
+        <form class="todo-write">
+          <input class="todo-input" placeholder="할 일을 입력하세요." />
+          <button class="add" type="submit">
             <img src="img/add1.svg" alt="add" />
           </button>
-        </div>
-        <ul>
+        </form>
+        <ul class="todo-list">
           <li>
-            <button class="check">
+            <label class="check">
+              <input type="checkbox" />
               <img src="img/check1.svg" alt="check" />
-            </button>
-            <p class="text-field">투두리스트 만들기</p>
+            </label>
+            <span>투두리스트 만들기</span>
             <button class="minus">
-              <img src="img/minus1.svg" alt="minus" />
+              <img class="minus" src="img/minus1.svg" alt="minus" />
             </button>
           </li>
         </ul>
@@ -81,18 +88,20 @@
         <p class="section-title">Done</p>
       </div>
       <div class="done-contents">
-        <ul>
+        <ul class="done-list">
           <li>
-            <button class="check">
+            <label class="check">
+              <input type="checkbox" checked />
               <img src="img/check1.svg" alt="check" />
-            </button>
-            <p class="text-field">레포트 작성하기</p>
+            </label>
+            <span>레포트 작성하기</span>
             <button class="minus">
-              <img src="img/minus1.svg" alt="minus" />
+              <img class="minus" src="img/minus1.svg" alt="minus" />
             </button>
           </li>
         </ul>
       </div>
     </section>
+    <script src="script.js"></script>
   </body>
 </html>

@@ -115,6 +115,18 @@ section {
   display: flex;
   justify-content: space-around;
 }
+input#sad:checked + img {
+  content: url("img/sad2.svg"); /* 체크되었을 때 이미지 변경 */
+}
+input#ordinary:checked + img {
+  content: url("img/ordinary2.svg"); /* 체크되었을 때 이미지 변경 */
+}
+input#smile:checked + img {
+  content: url("img/smile2.svg"); /* 체크되었을 때 이미지 변경 */
+}
+input#happy:checked + img {
+  content: url("img/happy2.svg"); /* 체크되었을 때 이미지 변경 */
+}
 
 .todo {
   display: flex;
@@ -149,13 +161,27 @@ section {
   border-radius: 0px 28px 28px 28px;
   background: var(--White-Grey, #f2f2f5);
 }
-.explain {
+.todo-input {
   all: unset;
   font-family: "Pretendard Variable";
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 24px */
+}
+label input {
+  display: none; /* 기본 체크박스 숨김 */
+}
+.plus input:checked + img {
+  content: url("img/plus2.svg"); /* 체크되었을 때 이미지 변경 */
+}
+.check input:checked + img {
+  content: url("img/check2.svg"); /* 체크되었을 때 이미지 변경 */
+}
+.minus img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
 li {
@@ -169,10 +195,8 @@ li {
   border-bottom: 1px solid var(--White-Grey, #f2f2f5);
   background: rgba(255, 255, 255, 0);
 }
-button {
-  all: unset;
-}
-.text-field {
+span {
+  display: block;
   width: 250px;
   flex-shrink: 0;
   color: #000;
@@ -181,6 +205,9 @@ button {
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 24px */
+}
+button {
+  all: unset;
 }
 
 .done {
