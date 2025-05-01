@@ -1,1 +1,106 @@
-<!-- 이 주석은 삭제하시면 됩니다 -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do Calendar</title>
+    <link rel="stylesheet" href="do.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- 좌측 패널 -->
+      <div class="left-panel">
+        <!-- 1) 뷰 전환 탭 -->
+        <div class="view-tabs">
+          <button data-view="day" class="active">일</button>
+          <button data-view="week">주</button>
+          <button data-view="month">월</button>
+          <button data-view="year">년</button>
+        </div>
+
+        <!-- 2) 달력(일간/주간/월간 뷰 공용) -->
+        <div class="calendar-card">
+          <div class="calendar-header">
+            <div class="ym">
+              <span class="year"></span> <span class="month"></span>
+            </div>
+          </div>
+          <!-- 일간/주간 공통 달력 -->
+          <table class="calendar-table" id="calendar-table">
+            <thead>
+              <tr>
+                <th>일</th>
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+                <th>목</th>
+                <th>금</th>
+                <th>토</th>
+              </tr>
+            </thead>
+            <tbody id="calendar-body"></tbody>
+          </table>
+          <!-- 월 뷰: 12개월 그리드 -->
+          <div id="month-picker" class="month-picker hidden">
+            <!-- JS로 1~12월 버튼 생성 -->
+          </div>
+          <!-- 년 뷰: 2020~2030년 그리드 -->
+          <div id="year-picker" class="year-picker hidden">
+            <!-- JS로 2020~2030년 버튼 생성 -->
+          </div>
+        </div>
+
+        <!-- 3) 목표 입력 -->
+        <div class="daily-goal">
+          <label id="goal-label">일간 목표</label>
+          <textarea id="goal-text" placeholder="목표를 입력하세요"></textarea>
+        </div>
+      </div>
+
+      <!-- 우측 패널 -->
+      <div class="right-panel">
+        <!-- 4) 카테고리 필터 -->
+        <div class="category-filter">
+          <button class="category active" data-category="club">동아리</button>
+          <button class="category" data-category="school">학교</button>
+          <button class="category" data-category="etc">기타</button>
+          <button class="add-category">＋</button>
+          <div class="avatar">🦁</div>
+        </div>
+
+        <!-- 5) Things to do 카드 -->
+        <div class="todo-card">
+          <div class="card-header">
+            <h2>Things to do</h2>
+            <button class="add-todo">＋</button>
+            <!-- 새 할 일 추가 -->
+          </div>
+          <div id="new-todo-input-area" class="new-todo-input-area hidden">
+            <input
+              type="text"
+              id="new-todo-input"
+              placeholder="할 일을 입력하세요 (최대 20자)"
+              maxlength="19"
+            />
+            <button id="new-todo-add-btn">추가</button>
+          </div>
+          <div id="todo-empty" class="empty-message">
+            우측 상단의 + 버튼을 눌러 할 일을 추가해보세요!
+          </div>
+          <ul id="todo-list" class="todo-list"></ul>
+        </div>
+
+        <!-- 6) Done 카드 -->
+        <div class="todo-card">
+          <div class="card-header"><h2>Done</h2></div>
+          <div id="done-empty" class="empty-message">
+            아직 완료된 것이 없어요!
+          </div>
+          <ul id="done-list" class="todo-list"></ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="to.js"></script>
+  </body>
+</html>

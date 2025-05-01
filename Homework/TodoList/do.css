@@ -1,0 +1,473 @@
+/*────────────────────────────────────────────
+  1. 기본 변수
+────────────────────────────────────────────*/
+:root {
+  --clr-white: #ffffff;
+  --clr-black: #000000;
+  --clr-bg-card: #f2f2f2;
+  --clr-primary-dark: #366202;
+  --clr-primary: #79a617;
+  --clr-primary-light: #e6f2bb;
+  --clr-dot: #9dbf54;
+  --clr-grey-light: #eeeeee;
+  --clr-grey: #737373;
+  --radius: 12px;
+  --font: "Pretendard", sans-serif;
+}
+
+/* 숨김용 클래스 */
+.hidden {
+  display: none !important;
+}
+
+/*────────────────────────────────────────────
+  2. 리셋 & 베이스
+────────────────────────────────────────────*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font);
+  background: var(--clr-white);
+  color: var(--clr-black);
+}
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/*────────────────────────────────────────────
+  3. 레이아웃
+────────────────────────────────────────────*/
+.app-container {
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+}
+.left-panel {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/*────────────────────────────────────────────
+  4. 뷰 전환 탭
+────────────────────────────────────────────*/
+.view-tabs {
+  display: flex;
+  border: 1px solid var(--clr-grey-light);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--clr-white);
+}
+.view-tabs button {
+  flex: 1;
+  padding: 8px 0;
+  font-size: 14px;
+  color: var(--clr-grey);
+  background: transparent;
+  border-right: 1px solid var(--clr-grey-light);
+  transition: background 0.2s, color 0.2s;
+}
+.view-tabs button:last-child {
+  border-right: none;
+}
+.view-tabs button:hover {
+  background: var(--clr-bg-card);
+}
+.view-tabs button.active {
+  background: var(--clr-grey-light);
+  color: var(--clr-black);
+}
+
+/*────────────────────────────────────────────
+  5. 캘린더 카드
+────────────────────────────────────────────*/
+.calendar-card {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.calendar-header {
+  background: var(--clr-primary-light);
+  padding: 16px;
+}
+.calendar-header .ym .year {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--clr-primary-dark);
+}
+.calendar-header .ym .month {
+  font-size: 16px;
+  color: var(--clr-primary-dark);
+  margin-top: 4px;
+}
+
+/*────────────────────────────────────────────
+  6. 달력: 일·주 뷰 공통
+────────────────────────────────────────────*/
+#calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#calendar-table th,
+#calendar-table td {
+  width: 14.28%;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 14px;
+  position: relative;
+}
+#calendar-table th {
+  color: var(--clr-grey);
+}
+#calendar-table th:first-child {
+  color: #e74343;
+}
+#calendar-table th:last-child {
+  color: #407fdf;
+}
+
+/* 날짜 버튼 */
+.day-btn {
+  background: transparent;
+  color: var(--clr-black);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, outline 0.2s;
+}
+.day-btn.sunday {
+  color: #e74343;
+}
+.day-btn.saturday {
+  color: #407fdf;
+}
+.calendar-table td.out-month .day-btn {
+  color: var(--clr-bg-card);
+  pointer-events: none;
+}
+
+/* (1) 일간 뷰: hover / selected / toggle */
+.calendar-table:not(.week-mode) .day-btn:hover {
+  outline: 1px solid var(--clr-primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.calendar-table:not(.week-mode) .day-btn.selected {
+  background: var(--clr-primary-dark);
+  color: var(--clr-white);
+  outline: 1px solid var(--clr-primary-dark);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* 오늘 날짜 강조 제거 */
+#calendar-table td.today .day-btn {
+  background: none !important;
+  color: inherit !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* (2) 주간 뷰 */
+.calendar-table.week-mode .day-btn {
+  pointer-events: none;
+}
+.calendar-table.week-mode tr {
+  position: relative;
+}
+.calendar-table.week-mode tr::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  border: 1px solid var(--clr-grey-light);
+  border-radius: 20px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.calendar-table.week-mode tr:hover::before {
+  border-color: var(--clr-primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.calendar-table.week-mode tr.clicked::before {
+  border: none;
+}
+.calendar-table.week-mode tr.clicked .day-btn {
+  background: var(--clr-primary-dark) !important;
+  color: var(--clr-white) !important;
+  outline: 1px solid var(--clr-primary-dark) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
+}
+
+/*────────────────────────────────────────────
+  7. 달력: 월 뷰
+────────────────────────────────────────────*/
+.month-picker {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 16px;
+}
+.month-picker button {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  color: var(--clr-black);
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s;
+}
+.month-picker button:hover {
+  border: 1px solid var(--clr-primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.month-picker button.selected {
+  background: var(--clr-primary-dark);
+  color: var(--clr-white);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/*────────────────────────────────────────────
+  8. 달력: 년 뷰
+────────────────────────────────────────────*/
+.year-picker {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 16px;
+}
+.year-picker button {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  color: var(--clr-black);
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s;
+}
+.year-picker button:hover {
+  border: 1px solid var(--clr-primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.year-picker button.selected {
+  background: var(--clr-primary-dark);
+  color: var(--clr-white);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/*────────────────────────────────────────────
+  9. 목표 입력
+────────────────────────────────────────────*/
+.daily-goal label {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 14px;
+  color: var(--clr-primary);
+  border: 1px solid var(--clr-primary);
+  border-radius: 8px;
+}
+.daily-goal textarea {
+  width: 100%;
+  height: 60px;
+  margin-top: 8px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: none;
+}
+
+/*────────────────────────────────────────────
+ 10. 카테고리 필터
+────────────────────────────────────────────*/
+.category-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.category-filter .category {
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 12px;
+  background: var(--clr-grey-light);
+  color: var(--clr-grey);
+  transition: background 0.2s, color 0.2s;
+}
+.category-filter .category.active {
+  background: var(--clr-primary-dark);
+  color: var(--clr-white);
+}
+.category-filter .add-category {
+  font-size: 20px;
+  color: var(--clr-grey);
+}
+.category-filter .avatar {
+  margin-left: auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--clr-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+/*────────────────────────────────────────────
+ 11. To-Do / Done 카드 스타일
+────────────────────────────────────────────*/
+.todo-card {
+  background: #f2f2f2;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #737373;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+.card-header h2 {
+  font-size: 18px;
+  color: var(--clr-primary-dark);
+  position: relative;
+}
+
+.empty-message {
+  color: var(--clr-grey);
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+/* + 버튼 */
+.add-todo {
+  width: 24px;
+  height: 24px;
+  background: url("./images/+\ not.png") no-repeat center center;
+  font-size: 0;
+  background-size: contain;
+}
+.add-todo:visited {
+  background: url("./images/+\ click.png") no-repeat center center;
+  background-size: contain;
+}
+
+/* 리스트 */
+.todo-list {
+  list-style: none;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 0;
+  margin: 0;
+}
+.todo-list li {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  background: white;
+  padding-right: 36px;
+}
+.todo-list li:last-child {
+  margin-bottom: 0;
+}
+.toggle {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--clr-primary);
+  border-radius: 50%;
+  margin-right: 12px;
+  cursor: pointer;
+}
+.todo-list li.done .toggle {
+  background: var(--clr-dot);
+  border-color: var(--clr-dot);
+}
+.todo-list li.done .text {
+  text-decoration: line-through;
+  color: var(--clr-grey);
+}
+.new-todo-input-area {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.new-todo-input-area input {
+  flex: 1;
+  padding: 6px 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* 수정 토글 */
+.edit-toggle {
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+  cursor: pointer;
+  background: url("./images/left-chevron.png") no-repeat center center;
+  margin-right: 8px;
+  background-size: contain;
+  position: absolute;
+  align-items: center;
+  right: 0;
+  z-index: 10;
+  top: 50%;
+}
+
+/* 수정/삭제 버튼 */
+.edit-buttons {
+  display: flex;
+  gap: 5px;
+  margin-left: 8px;
+  align-items: center;
+  top: 50%;
+  position: absolute;
+  right: 40px;
+}
+.edit-buttons.hidden {
+  display: none;
+}
+.edit-buttons button {
+  padding: 4px 8px;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  color: var(--clr-white);
+  cursor: pointer;
+}
+.edit-buttons .edit-btn {
+  background-color: #ef7300;
+}
+.edit-buttons .delete-btn {
+  background-color: #d20000;
+}
