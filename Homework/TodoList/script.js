@@ -58,7 +58,7 @@ const printTodoItem = (text) => {
   // li 요소 생성
   const li = document.createElement("li");
 
-  // ✅ label 요소 (체크박스 + 이미지)
+  // label 요소 (체크박스 + 이미지)
   const label = document.createElement("label");
   label.className = "check";
 
@@ -69,12 +69,12 @@ const printTodoItem = (text) => {
   checkImg.src = "img/check1.svg";
   checkImg.alt = "check";
 
-  // ✅ span 요소 (텍스트)
+  // span 요소 (텍스트)
   const span = document.createElement("span");
   // 생성한 span 태그에 인자로 받은 text를 할당해주세요.
   span.innerText = text;
 
-  // ✅ button 요소 (삭제 버튼)
+  // button 요소 (삭제 버튼)
   const minusBtn = document.createElement("button");
   minusBtn.className = "minus";
 
@@ -90,7 +90,7 @@ const printTodoItem = (text) => {
   // 생성한 button 태그를 클릭하면 deleteTodoItem 함수가 실행되게 해주세요.
   minusBtn.addEventListener("click", deleteTodoItem);
   // [생성한 요소들 연결]
-  // ✅ li에 자식 요소들 추가
+  // li에 자식 요소들 추가
   label.appendChild(checkbox);
   label.appendChild(checkImg);
   // 생성한 li 태그에 생성한 span 태그와 button 태그를 자식 노드로 추가해주세요.
@@ -128,7 +128,7 @@ const printDoneItem = (text) => {
   // li 요소 생성
   const li = document.createElement("li");
 
-  // ✅ label 요소 (체크박스 + 이미지)
+  // label 요소 (체크박스 + 이미지)
   const label = document.createElement("label");
   label.className = "check";
 
@@ -140,12 +140,12 @@ const printDoneItem = (text) => {
   checkImg.src = "img/check1.svg";
   checkImg.alt = "check";
 
-  // ✅ span 요소 (텍스트)
+  // span 요소 (텍스트)
   const span = document.createElement("span");
   // 생성한 span 태그에 인자로 받은 text를 할당해주세요.
   span.innerText = text;
 
-  // ✅ button 요소 (삭제 버튼)
+  // button 요소 (삭제 버튼)
   const minusBtn = document.createElement("button");
   minusBtn.className = "minus";
 
@@ -161,7 +161,7 @@ const printDoneItem = (text) => {
   // 생성한 button 태그를 클릭하면 deleteTodoItem 함수가 실행되게 해주세요.
   minusBtn.addEventListener("click", deleteDoneItem);
   // [생성한 요소들 연결]
-  // ✅ li에 자식 요소들 추가
+  // li에 자식 요소들 추가
   label.appendChild(checkbox);
   label.appendChild(checkImg);
   // 생성한 li 태그에 생성한 span 태그와 button 태그를 자식 노드로 추가해주세요.
