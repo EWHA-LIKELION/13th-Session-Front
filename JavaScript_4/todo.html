@@ -9,35 +9,43 @@
   </head>
   <body>
     <div class="container">
-      <div class="top-contents">
-        <h2 class="todo-title">투두리스트</h2>
-        <div class="todo-input-items">
-          <button class="popup-button">+</button>
-          <form class="todo-form">
-            <input class="todo-input" placeholder="할 일을 입력해주세요" />
-            <button class="todo-input-button" type="submit">추가하기</button>
-          </form>
+      <header class="header">
+        <h1>TO-DO LIST</h1>
+        <div class="date-toggle">
+          <span class="date">25.04.03 THU</span>
+          <button class="toggle-mode">DAY/WEEK</button>
         </div>
-      </div>
-      <div class="center-contents">
-        <h3>할 일</h3>
-        <ul class="todo-list">
-          <li>
-            <span>새로운 할 일</span>
-            <button>삭제</button>
-          </li>
-        </ul>
-      </div>
-      <div class="bottom-contents">
-        <h3 class="list-title">끝낸 일</h3>
-        <ul class="done-list">
-          <li>
-            <span>일 끝냄</span>
-            <button>삭제</button>
-          </li>
-        </ul>
+      </header>
+
+      <main class="main-content">
+        <section class="todo-section">
+          <h2>TO-DO</h2>
+          <ul class="todo-list"></ul>
+        </section>
+
+        <section class="done-section">
+          <h2>DONE</h2>
+          <ul class="done-list"></ul>
+        </section>
+      </main>
+
+      <!-- 플러스 버튼 -->
+      <button class="popup-button">+</button>
+
+      <!-- 팝업 입력창 -->
+      <div class="popup-form hidden">
+        <h2>TYPE TO ADD TO-DO LIST</h2>
+        <p>최소 1자(공백 제외) ~ 최대 20자까지 입력 가능</p>
+        <input
+          type="text"
+          class="todo-input"
+          placeholder="여기를 눌러 텍스트를 입력하세요."
+        />
+        <button class="save-button">저장</button>
+        <button class="close-button">❌</button>
       </div>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>
