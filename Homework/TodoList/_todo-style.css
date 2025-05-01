@@ -1,0 +1,89 @@
+:root {
+  --header-1-font-family: "Pretendard Variable", Helvetica;
+  --header-1-font-weight: 600;
+  --header-1-font-size: 36px;
+  --header-1-letter-spacing: 0px;
+  --header-1-line-height: 150%;
+  --header-1-font-style: normal;
+  --header-2-font-family: "Pretendard Variable", Helvetica;
+  --header-2-font-weight: 600;
+  --header-2-font-size: 32px;
+  --header-2-letter-spacing: 0px;
+  --header-2-line-height: normal;
+  --header-2-font-style: normal;
+  --header-3-font-family: "Pretendard Variable", Helvetica;
+  --header-3-font-weight: 500;
+  --header-3-font-size: 16px;
+  --header-3-letter-spacing: 0px;
+  --header-3-line-height: 150%;
+  --header-3-font-style: normal;
+  --body-title-font-family: "Pretendard Variable", Helvetica;
+  --body-title-font-weight: 600;
+  --body-title-font-size: 20px;
+  --body-title-letter-spacing: 0px;
+  --body-title-line-height: 150%;
+  --body-title-font-style: normal;
+  --body-3-font-family: "Pretendard Variable", Helvetica;
+  --body-3-font-weight: 700;
+  --body-3-font-size: 20px;
+  --body-3-letter-spacing: 0px;
+  --body-3-line-height: 150%;
+  --body-3-font-style: normal;
+  --body-2-font-family: "Pretendard Variable", Helvetica;
+  --body-2-font-weight: 500;
+  --body-2-font-size: 20px;
+  --body-2-letter-spacing: 0px;
+  --body-2-line-height: 150%;
+  --body-2-font-style: normal;
+  --body-1-font-family: "Pretendard Variable", Helvetica;
+  --body-1-font-weight: 400;
+  --body-1-font-size: 20px;
+  --body-1-letter-spacing: 0px;
+  --body-1-line-height: 150%;
+  --body-1-font-style: normal;
+  --body-text-font-family: "Pretendard Variable", Helvetica;
+  --body-text-font-weight: 500;
+  --body-text-font-size: 16px;
+  --body-text-letter-spacing: 0px;
+  --body-text-line-height: 150%;
+  --body-text-font-style: normal;
+  --variable-collection-brand-primary: rgba(255, 116, 37, 1);
+  --variable-collection-brand-secondary: rgba(255, 209, 183, 1);
+  --variable-collection-brand-tertiary: rgba(255, 237, 227, 1);
+  --variable-collection-brand-background: rgba(75, 75, 75, 1);
+  --variable-collection-black: rgba(34, 34, 34, 1);
+  --variable-collection-gray-3: rgba(129, 129, 129, 1);
+  --variable-collection-gray-2: rgba(194, 194, 194, 1);
+  --variable-collection-gray-1: rgba(240, 240, 240, 1);
+  --variable-collection-white: rgba(255, 255, 255, 1);
+  --collection-1-main: rgba(255, 116, 37, 1);
+}
+
+
+
+[data-collection-1-mode="light"] {
+  --collection-1-main: rgba(255, 116, 37, 1);
+}
+
+[data-collection-1-mode="dark"] {
+  --collection-1-main: rgba(44, 44, 44, 1);
+}
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
