@@ -62,7 +62,7 @@ header {
 }
 
 section {
-  margin-top: 137px;
+  margin-top: 132px;
   margin-left: 30px;
   margin-right: 30px;
 }
@@ -76,7 +76,7 @@ section {
 }
 
 .calender-mood {
-  width: 380px;
+  width: 447px;
 }
 .calender-title {
   display: flex;
@@ -150,7 +150,7 @@ section {
   background: var(--White-Grey, #f2f2f5);
 }
 .explain {
-  color: var(--Grey, #c2c2cd);
+  all: unset;
   font-family: "Pretendard Variable";
   font-size: 16px;
   font-style: normal;
@@ -168,6 +168,9 @@ li {
   align-self: stretch;
   border-bottom: 1px solid var(--White-Grey, #f2f2f5);
   background: rgba(255, 255, 255, 0);
+}
+button {
+  all: unset;
 }
 .text-field {
   width: 250px;
