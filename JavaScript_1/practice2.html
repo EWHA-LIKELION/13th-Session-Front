@@ -4,12 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>practice2</title>
-    <style>
-     .my-class {
-        background-color:cornflowerblue; 
-        color: darkgreen;
-      } 
-    </style>
+    <style></style>
   </head>
   <body>
     <h1>원하는 요소를 동적으로 만들기 연습</h1>
@@ -19,11 +14,7 @@
     <script>
       document.querySelector("#makeBtn").addEventListener("click", function () {
         // 1. 새로운 동적 element를 만들고, 그 값을 p에 담기
-        let p1= document.createElement('p');
-        //2. 만든 p element에 class 속성 추가하기
-        p1.setAttribute("class","my-class")
-        //3. 만든 p element에 innerText 추가하기
-        p1.innerText="p 에 추가할 텍스트입니다."
+
         //4. 만든 p element를 id가 one인 요소(p)의 자식 요소로 추가하기
         document.querySelector("#one").append(p1);
       });
