@@ -1,12 +1,5 @@
-<<<<<<< HEAD
 import logo from "./logo.svg";
 import "./App.css";
-
-function App() {
-  return <></>;
-=======
-import logo from './logo.svg';
-import './App.css';
 
 function App() {
   return (
@@ -27,7 +20,6 @@ function App() {
       </header>
     </div>
   );
->>>>>>> c0d3b3d4 (fix: React_1 세션 자료 수정)
 }
 
 export default App;
