@@ -40,14 +40,14 @@ function App() {
   const [modal, setModal] = useState(false);
   const [track, setTrack] = useState("");
   const [trackData, setTrackData] = useState([]);
-  const [selectedId, setSelectedId] = useState(null); // 선택된 아기사자 ID 저장!
+  const [selectedId, setSelectedId] = useState(null);
 
   const selectedLion = trackData.find((lion) => lion.id === selectedId);
-
+  // 트랙 선택을 위한 함수
   const selectTrack = (selectedTrack) => {
     setTrack(selectedTrack);
     setTrackData(BabyLionList[selectedTrack]);
-    setSelectedId(null); // 트랙 변경 시 선택 초기화!
+    setSelectedId(null);
   };
 
   return (
@@ -90,7 +90,7 @@ function App() {
       </BackgroundModal>
       <Cheering>
         {selectedLion
-          ? `${selectedLion.name} (${selectedLion.major}) 아가사자를 응원합니다!`
+          ? `${track} ${selectedLion.name} 아가사자를 응원합니다!`
           : `${track} 아가사자를 응원합니다!`}
       </Cheering>
     </Wrapper>
