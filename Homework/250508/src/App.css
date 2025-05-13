@@ -1,0 +1,235 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+:root {
+  --: 0px 5px 15px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
+
+
+.screen {
+  background-color: #d8e3eb;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.screen .div {
+  background-color: #d8e3eb;
+  width: 1920px;
+  height: 1080px;
+  position: relative;
+}
+
+.screen .overlap-group {
+  position: absolute;
+  width: 784px;
+  height: 501px;
+  top: 205px;
+  left: 568px;
+  /* background-image: url(./img/rectangle-380.png); */
+  background-size: 100% 100%;
+}
+
+.screen .frame {
+  display: flex;
+  width: 143px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 32px 8px 26px;
+  position: absolute;
+  top: 401px;
+  left: 339px;
+  background-color: #81a6d3;
+  border-radius: 27px;
+}
+
+.screen .text-wrapper {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  margin-left: -3.5px;
+  margin-right: -3.5px;
+  font-family: "Pretendard-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.screen .text-wrapper-2 {
+  position: absolute;
+  height: 26px;
+  top: 220px;
+  left: 146px;
+  font-family: "Pretendard-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #404040;
+  font-size: 22px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.screen .text-wrapper-3 {
+  position: absolute;
+  height: 18px;
+  top: 347px;
+  left: 206px;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  color: #404040;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.screen .text-wrapper-4 {
+  position: absolute;
+  height: 18px;
+  top: 347px;
+  left: 376px;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  color: #404040;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.screen .text-wrapper-5 {
+  position: absolute;
+  height: 18px;
+  top: 347px;
+  left: 545px;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  color: #404040;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.screen .line {
+  position: absolute;
+  width: 641px;
+  height: 2px;
+  top: 174px;
+  left: 71px;
+}
+
+.screen .text-wrapper-6 {
+  position: absolute;
+  height: 42px;
+  top: 87px;
+  left: 216px;
+  font-family: "Pretendard-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #333333;
+  font-size: 35px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.screen .create-a-namemodal {
+  position: absolute;
+  width: 223px;
+  height: 16px;
+  top: 62px;
+  left: 279px;
+  font-family: "Pretendard-Light", Helvetica;
+  font-weight: 300;
+  color: #333333;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.screen .image {
+  top: 271px;
+  left: 212px;
+  position: absolute;
+  width: 68px;
+  height: 68px;
+  object-fit: cover;
+}
+
+.screen .img {
+  top: 271px;
+  left: 377px;
+  position: absolute;
+  width: 68px;
+  height: 68px;
+  object-fit: cover;
+}
+
+.screen .image-wrapper {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 271px;
+  left: 536px;
+}
+
+.screen .image-2 {
+  top: 0;
+  left: -4px;
+  position: absolute;
+  width: 68px;
+  height: 68px;
+  object-fit: cover;
+}
+
+.screen .overlap {
+  position: absolute;
+  width: 754px;
+  height: 84px;
+  top: 756px;
+  left: 583px;
+  background-color: #ffffff;
+  border-radius: 40px;
+  box-shadow: var(--);
+}
+
+.screen .text-wrapper-7 {
+  position: absolute;
+  height: 24px;
+  top: 29px;
+  left: 314px;
+  font-family: "Pretendard-Medium", Helvetica;
+  font-weight: 500;
+  color: #81a6d3;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
