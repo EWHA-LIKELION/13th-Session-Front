@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="todo.css" />
+        <title>Document</title>
+    </head>
+
+    <body>
+        <!-- 가장 큰 박스 -->
+        <div class="container"> 
+            <!-- 맨 위 header -->
+            <div>
+                <header class="header">
+                    <img src="Sticker.svg" class="clover-logo"/>
+                    <span class="tit">Monthly Comment</span>
+                </header>
+            </div>
+            <!-- 달력 들어가는 부분-->
+            <div class="main">
+                <!-- 왼쪽 부분 -->
+                <div class="calender">
+                    <!-- 캘린더 윗부분 -->
+                    <div class="calender-header">
+                        <span>2025년 4월</span>
+                        <div class="nav-btns">
+                            <img src="chevron_backward.svg"/>
+                            <img src="chevron_forward.svg"/>
+                        </div>
+                    </div>
+                    <!-- 캘린더 아래부분 -->
+                    <div class="calender-body">
+                        <!--요일-->
+                        <div class="week">
+                            <div>월</div>
+                            <div>화</div>
+                            <div>수</div>
+                            <div>목</div>
+                            <div>금</div>
+                            <div class="sat">토</div>
+                            <div class="sun">일</div>
+                        </div>
+                        <!--날짜-->
+                        <div class="calendar-grid" id="calendar-grid">
+                            <!-- 1~30일 날짜 div들 js로 추가될 예정-->
+                            <img src="Box.svg"/>
+                        </div>
+                    </div>
+                </div>
+                <!--오른쪽 부분-->
+                <div class="todo-done">
+                    <div class="todo">
+                        <div class="todo-header">
+                            <div>
+                                <img src="To DO Header.svg"/>
+                            </div>
+                            <!-- 할 일 입력하는 버튼 만들기-->
+                            <div>
+                                <button class="popup-button">
+                                    <!-- + 버튼 생성-->
+                                    <img src="Icon Button.svg"/>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <form class="todo-form">
+                                <input class="todo-input" placeholder="할 일을 입력해주세요"/>
+                                <button class="todo-input-button" type="submit">enter</button>
+                            </form>
+                        </div>
+                        <ul class="todo-list">
+                            <!-- 할 일 입력받아서 여기 리스트에 추가될 예정-->
+                        </ul>
+                    </div>
+                    <div class="done">
+                        <div class="done-header">
+                            <img src="To DO Header (1).svg"/>
+                        </div>
+                        <div>
+                            <ul class="done-list">
+                                <!-- 할 일 입력받아서 여기 리스트에 추가될 예정-->
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
