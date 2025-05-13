@@ -40,18 +40,14 @@ function App() {
   const [modal, setModal] = useState(false);
   const [track, setTrack] = useState("");
   const [trackData, setTrackData] = useState([]);
-  //선택된 사용자 ID를 위한 state 선언
+  const [selectedId, setSelectedId] = useState(null); // 선택된 아기사자 ID 저장!
 
-  //const selectedLionName =
-  //trackData.find를 활용해서 선택한 사용자 ID와 list의 id가 일치하는 item을 찾습니다.
-  //그리고 그 item.name이 선택되기 위한 코드를 작성해봅시다! (map 함수 도는 방식과 유사함)
-  //hint✉️ : trackData.find((lion) => ~~~조건문 들어가는 자리~~ )?.name || "";
+  const selectedLion = trackData.find((lion) => lion.id === selectedId);
 
-  // 트랙 선택을 위한 함수
   const selectTrack = (selectedTrack) => {
     setTrack(selectedTrack);
     setTrackData(BabyLionList[selectedTrack]);
-    //트랙을 선택했을 때 선택된 사용자 ID 초기화하는 setState 함수 필요
+    setSelectedId(null); // 트랙 변경 시 선택 초기화!
   };
 
   return (
@@ -87,17 +83,15 @@ function App() {
             setModal={setModal}
             track={track}
             dataList={BabyLionList[track]}
-            //dataList를 여기서 props로 전달해서 보내주는 것으로 수정했습니다!
-            //그리고 Modal에서 사용자를 선택하기 위해
-            //1. 사용자 ID와 2. 이를 선택할 수 있는 함수를 props로 보내줍시다.
+            selectedId={selectedId}
+            setSelectedId={setSelectedId}
           />
         )}
       </BackgroundModal>
       <Cheering>
-        {track}
-        {/*{selectedLionName}*/}
-        {/* selectedLionName은 위에서 선언한 선택한 사용자 ID에 해당하는 이름입니다! */}
-        아가사자를 응원합니다!
+        {selectedLion
+          ? `${selectedLion.name} (${selectedLion.major}) 아가사자를 응원합니다!`
+          : `${track} 아가사자를 응원합니다!`}
       </Cheering>
     </Wrapper>
   );
