@@ -1,0 +1,424 @@
+:root {
+  /* Color */
+  --white-color: #fff;
+  --black-color: #140a00;
+  --blue-color: #045fd4;
+  --red-color: #ff0000;
+  --grey-dark-color: #909090;
+  --grey-light-color: #e0e0e0;
+
+  /* Size */
+  --spacing: 12px;
+  --spacing-small: 6px;
+  --avatar-size: 36px;
+
+  /* Font Size */
+  --font-large: 20px;
+  --font-regular: 16px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button i {
+  background: none;
+  box-shadow: none;
+}
+
+body {
+  font-family: Roboto;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background: none;
+  box-shadow: none;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing);
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+header .logo {
+  font-size: var(--font-large);
+}
+
+header .logo i {
+  color: var(--red-color);
+}
+
+header .icons .fa-search {
+  margin-right: var(--spacing);
+}
+
+/* Video player */
+.player {
+  position: sticky;
+  top: 0;
+  text-align: center;
+  background-color: var(--black-color);
+}
+
+.player video {
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+}
+
+/* Video info */
+.infoAndUpNext .info {
+  padding: var(--spacing);
+}
+
+/* Metadata */
+.info .metadata .hashtags {
+  display: flex;
+  font-size: var(--font-small);
+  color: var(--blue-color);
+  padding-left: var(--spacing);
+  margin-top: 5px;
+}
+
+.info .metadata .hashtags li {
+  margin-right: var(--spacing);
+}
+
+.info .metadata .titleAndButton {
+  display: flex;
+}
+
+.info .metadata .titleAndButton .title {
+  font-size: var(--font-medium);
+  margin-right: var(--spacing);
+  padding-left: var(--spacing);
+}
+
+.info .metadata .titleAndButton .title.clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  padding-left: var(--spacing);
+}
+
+.info .metadata .titleAndButton .moreBtn {
+  height: 100%;
+  transition: transform 300ms ease-in-out;
+}
+
+.info .metadata .titleAndButton .moreBtn.clicked {
+  transform: rotate(180deg);
+}
+
+.info .metadata .views {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+  padding-left: var(--spacing);
+}
+
+/* Action buttons */
+.info .actions {
+  display: flex;
+  justify-content: space-around;
+  margin: var(--spacing) 0;
+}
+
+.info .actions button {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+.info .actions button i {
+  margin: 0 auto;
+  margin-bottom: var(--spacing-small);
+  font-size: var(--font-regular);
+}
+
+.info .actions button i.active {
+  color: var(--blue-color);
+}
+
+/* Channel description */
+.info .channel {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--grey-light-color);
+  border-bottom: 1px solid var(--grey-light-color);
+}
+
+.info .channel .metadata {
+  display: flex;
+  align-items: center;
+}
+
+.info .channel .metadata img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+  margin-left: var(--spacing);
+  margin-right: var(--spacing);
+  object-fit: cover;
+}
+
+.info .channel .metadata .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info .channel .metadata .info .name {
+  font-size: var(--font-medium);
+}
+
+.info .channel .metadata .info .subscribers {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+.info .channel .subscribe {
+  text-transform: uppercase;
+  color: var(--red-color);
+  font-size: var(--font-medium);
+}
+
+/* Up next */
+.upNext {
+  padding: 0 var(--spacing);
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 35%;
+}
+
+.upNext > .title {
+  font-size: var(--font-medium);
+  color: var(--black-color);
+  margin-bottom: var(--spacing-small);
+  margin-top: var(--spacing);
+}
+
+.upNext .item {
+  display: flex;
+  margin-top: var(--spacing);
+}
+
+.upNext .item .img {
+  flex-basis: 35%;
+  margin-right: var(--spacing);
+}
+
+.upNext .item .img img {
+  width: 100%;
+}
+
+.upNext .item .video iframe {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  margin-right: 6px;
+}
+
+.upNext .item .itemInfo {
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 3px;
+  padding-left: 10px;
+}
+
+.upNext .item .moreBtn {
+  flex-basis: 5%;
+  height: 100%;
+}
+
+.upNext .item .itemInfo .title {
+  font-size: var(--font-small);
+}
+
+.upNext .item .itemInfo .name,
+.upNext .item .itemInfo .views {
+  font-size: var(--font-micro);
+  color: var(--grey-dark-color);
+}
+
+.infoAndUpNext {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+/* 추천과 댓글을 묶는 새로운 section */
+.recommendAndComments {
+  display: flex;
+  flex-direction: column;
+}
+
+.recommendAndComments .upNext,
+.recommendAndComments .comments {
+  flex-basis: 100%;
+  margin-bottom: var(--spacing);
+}
+
+/* 댓글 섹션 */
+.comments {
+  margin-top: var(--spacing);
+  padding-left: var(--spacing);
+  display: flex;
+  flex-direction: column;
+  flex-basis: 60%;
+}
+
+.comments h3 {
+  font-size: var(--font-large);
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.comments ul {
+  list-style-type: none;
+  font-size: var(--font-medium);
+  padding: 0;
+}
+
+/* 댓글 아이템 */
+.comment {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.comment .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.comment .commentContent {
+  flex: 1;
+}
+
+.comment .username {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.comment p {
+  margin-bottom: 5px;
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+.comments .comment .commentContent .views {
+  font-size: var(--font-small);
+  font-color: var(--grey-light-color);
+  margin-left: 10px;
+}
+
+.comment .replyBtn {
+  background: none;
+  border: none;
+  color: #0066cc;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+/* 좋아요/싫어요 버튼 */
+.likeDislike {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.likeDislike button {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  color: #757575;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.likeDislike button i {
+  margin-right: 5px;
+}
+
+/* 좋아요/싫어요 개수 */
+.likeCount,
+.dislikeCount {
+  font-size: 0.9rem;
+}
+
+/* 답글 개수 */
+.replyBtn::after {
+  content: attr(data-replies);
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.upNext {
+  padding: var(--spacing);
+  display: flex;
+  flex-direction: column;
+  flex-basis: 35%;
+}
+
+@media screen and (min-width: 1024px) {
+  .mainContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "info info"
+      "comments recommend";
+    gap: 20px;
+    align-items: start;
+  }
+  .info {
+    grid-area: info;
+    align-self: start;
+    margin-top: 0px;
+  }
+  .comments {
+    grid-area: comments;
+    align-self: start;
+    margin-top: 0px;
+  }
+  .recommendAndComments {
+    grid-area: recommend;
+    align-self: start;
+    margin-top: 0px;
+  }
+
+  .comments h3,
+  .recommendAndComments h3,
+  .upNext h3 {
+    margin-top: 0;
+  }
+}
