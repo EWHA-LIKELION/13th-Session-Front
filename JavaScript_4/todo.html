@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="todo.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>TO-DO LIST</h1>
+        <div class="date-toggle">
+          <span class="date">25.04.03 THU</span>
+          <button class="toggle-mode">DAY/WEEK</button>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <section class="todo-section">
+          <h2>TO-DO</h2>
+          <ul class="todo-list"></ul>
+        </section>
+
+        <section class="done-section">
+          <h2>DONE</h2>
+          <ul class="done-list"></ul>
+        </section>
+      </main>
+
+      <!-- 플러스 버튼 -->
+      <button class="popup-button">+</button>
+
+      <!-- 팝업 입력창 -->
+      <div class="popup-form hidden">
+        <h2>TYPE TO ADD TO-DO LIST</h2>
+        <p>최소 1자(공백 제외) ~ 최대 20자까지 입력 가능</p>
+        <input
+          type="text"
+          class="todo-input"
+          placeholder="여기를 눌러 텍스트를 입력하세요."
+        />
+        <button class="save-button">저장</button>
+        <button class="close-button">❌</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
