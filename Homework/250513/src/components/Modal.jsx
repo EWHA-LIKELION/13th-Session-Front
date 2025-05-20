@@ -4,10 +4,8 @@ import styled from "styled-components";
 const Modal = ({ toggleModal }) => {
   return (
     <Wrapper>
-      {/* 🧨 배경 누르면 모달 닫기 */}
       <ModalBackground onClick={toggleModal} />
 
-      {/* 🌟 모달 안 클릭 시 닫히지 않게 막기! */}
       <ModalDiv onClick={(e) => e.stopPropagation()}>모달창</ModalDiv>
     </Wrapper>
   );
@@ -15,7 +13,6 @@ const Modal = ({ toggleModal }) => {
 
 export default Modal;
 
-// 💄 스타일 컴포넌트는 그대로 OK!
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
