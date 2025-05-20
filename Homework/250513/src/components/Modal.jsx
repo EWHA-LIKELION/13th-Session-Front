@@ -22,7 +22,7 @@ const Modal = ({ toggleModal }) => {
   return (
     <Overlay>
       <ModalBox ref={modalRef}>
-        <h2>✨ 이건 모달이에요 헴‼️</h2>
+        <h2>이건 모달</h2>
         <p>여기 안을 클릭해도 안 닫혀요~!</p>
         <CloseButton onClick={toggleModal}>닫기</CloseButton>
       </ModalBox>
