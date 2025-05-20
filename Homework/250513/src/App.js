@@ -6,7 +6,6 @@ import CreatePage from "./pages/CreatePage";
 import ModalPage from "./pages/ModalPage";
 
 function App() {
-  // 초기 게시글 배열
   const [posts, setPosts] = useState([
     {
       id: 1,
@@ -25,9 +24,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage posts={posts} />} />
-        <Route path="/" element={<HomePage />} />
         <Route
-          path="/"
+          path="/create"
           element={<CreatePage posts={posts} setPosts={setPosts} />}
         />
         <Route path="/modal" element={<ModalPage />} />

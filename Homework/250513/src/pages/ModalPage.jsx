@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import TopBar from "../components/Topbar";
+import TopBar from "../components/TopBar";
+import Modal from "../components/Modal";
 
 const ModalPage = () => {
   //모달창의 열고 닫힌 상태를 관리하는 useState 선언

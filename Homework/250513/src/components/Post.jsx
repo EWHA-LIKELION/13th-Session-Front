@@ -8,8 +8,8 @@ const Post = ({ post }) => {
   // 제목 & 내용 리턴 안에 넣어 렌더링
   return (
     <PostContainer>
-      <Title></Title>
-      <Content></Content>
+      <Title>{title}</Title>
+      <Content>{content}</Content>
     </PostContainer>
   );
 };

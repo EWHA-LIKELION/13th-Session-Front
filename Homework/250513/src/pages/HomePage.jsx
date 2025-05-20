@@ -1,10 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-
-import TopBar from "../components/Topbar";
-
-// props로 받아올 posts 구조 분해 할당
-const HomePage = (props) => {
+import TopBar from "../components/TopBar";
+function HomePage(props) {
   const { posts } = props;
   return (
     <Wrapper>
@@ -17,7 +14,7 @@ const HomePage = (props) => {
       ))}
     </Wrapper>
   );
-};
+}
 
 export default HomePage;
 
@@ -25,4 +22,14 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+const PostCard = styled.div`
+  width: 40%;
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff0f5;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 `;

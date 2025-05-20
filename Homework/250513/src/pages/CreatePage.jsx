@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-import TopBar from "../components/Topbar";
+import TopBar from "../components/TopBar";
 
 // props로 받아올 posts, setPosts 구조 분해 할당
-const CreatePage = () => {
+const CreatePage = (props) => {
   const { posts, setPosts } = props;
   // 게시글 작성 시 홈 화면으로 이동시키기 위한 네비게이트 함수 선언
   // - 여기에 작성
