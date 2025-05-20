@@ -1,65 +1,49 @@
-import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 
+// 🐣 props로 모달 닫는 함수 받아오기!
 const Modal = ({ toggleModal }) => {
-  const modalRef = useRef();
-
-  // 바깥 영역 클릭 시 닫히게 하는 useEffect
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      // 모달 외부 클릭했는지 확인
-      if (modalRef.current && !modalRef.current.contains(e.target)) {
-        toggleModal(); // 닫기 함수 호출
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside); // 마우스 누를 때 감지해!!
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside); // 클린업도 잊지마용~🐣
-    };
-  }, [toggleModal]);
-
   return (
-    <Overlay>
-      <ModalBox ref={modalRef}>
-        <h2>이건 모달</h2>
-        <p>여기 안을 클릭해도 안 닫혀요~!</p>
-        <CloseButton onClick={toggleModal}>닫기</CloseButton>
-      </ModalBox>
-    </Overlay>
+    <Wrapper>
+      {/* 🧨 배경 누르면 모달 닫기 */}
+      <ModalBackground onClick={toggleModal} />
+
+      {/* 🌟 모달 안 클릭 시 닫히지 않게 막기! */}
+      <ModalDiv onClick={(e) => e.stopPropagation()}>모달창</ModalDiv>
+    </Wrapper>
   );
 };
 
 export default Modal;
 
-const Overlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.4); // 반투명 배경!
+// 💄 스타일 컴포넌트는 그대로 OK!
+const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 5;
 `;
 
-const ModalBox = styled.div`
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-  min-width: 300px;
-  text-align: center;
+const ModalBackground = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 120%;
+  background-color: rgba(0, 0, 0, 0.4);
 `;
 
-const CloseButton = styled.button`
-  margin-top: 20px;
-  padding: 10px;
-  background-color: palevioletred;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+const ModalDiv = styled.div`
+  z-index: 10;
+  width: 40%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  background-color: thistle;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  font-size: 2rem;
+  font-weight: 600;
+  color: indianred;
 `;
