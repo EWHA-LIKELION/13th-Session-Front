@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practice</title>
+  </head>
+
+  <body>
+    <ul class="color">
+      <li class="red">Red</li>
+      <li class="yellow">Yellow</li>
+    </ul>
+  </body>
+  <script>
+    const li = document.createElement("li");
+    const text = document.createTextNode("Orange");
+    li.appendChild(text);
+    document
+      .querySelector(".color")
+      .insertBefore(li, document.querySelector(".yellow"));
+  </script>
+</html>

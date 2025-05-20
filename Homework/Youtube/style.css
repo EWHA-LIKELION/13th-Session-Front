@@ -1,0 +1,141 @@
+.header{
+    padding: 30px;
+}
+.container{
+    display: flex; /*가장 큰 container flex로 지정해주기 (왼쪽/오른쪽 좌우배치 위해서!!) */
+    flex-direction: row;
+    gap: 50px;
+}
+.left{
+    display: flex; /*  비디오창과 댓글창 세로로 flex 주기 */
+    flex-direction: column;
+    padding: 70px;
+    gap: 30px; /* 비디오창과 댓글창 간격 조정 */
+}
+.video-area{
+    background-color: rgb(212, 212, 212);
+    width: 800px;
+    height: 500px;
+    border-radius: 8px;
+}
+.comments{
+    display: grid; /* comment는 grid로 따로 지정함 */
+    grid-template-columns: 1fr; /* comment 열 1개로 */
+    gap: 20px;
+}
+.com1{
+    display: flex; /* 프사와 댓글 내용 두개를 아이템으로 하는 큰 container 하나 다시 생성 -> flex 속성 적용 */
+    flex-direction: row;
+    gap: 20px; /* item들 사이의 간격 조절 */
+}
+.com1 > img{ /* com1의 자식 속성 img 선택 */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /*이미지 둥글게*/
+    object-fit: cover; /*원본 사진 비율 맞게*/
+}
+.com2{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.com2 > img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.comment-time{
+    color:grey;
+}
+.following-comments{
+    color: rgba(73, 104, 206, 1);
+}
+
+.right{
+    display: flex; /*  오른쪽 item 큰 두개(video-info, recommend) 세로로 flex 주기 */
+    flex-direction: column;
+    gap: 40px;
+    padding: 50px;
+}
+.video-info{
+    display: flex; /*  내부 item 세개(main-info,view,buttons) 세로로 flex 주기 */
+    flex-direction: column;
+    gap: 50px;
+}
+.hashtag{
+    color: rgba(73, 104, 206, 1);
+}
+.main-info{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+.view{
+    color:grey;
+}
+
+.channel{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center; /* item들을 각 중앙에 배치 */
+}
+.channel > img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.channel p{ /*channel 클래스 안의 모든 <p>에 적용*/
+    /* 채널명과 구독자 수 간격 줄이기 */
+    margin: 3px;
+}
+.sub-number{
+    color: grey;
+}
+.channel button{
+    background-color: transparent; /*버튼 배경색 투명하게*/
+    color: red;
+    border: none; /*버튼 테두리 없애기*/
+}
+
+.reco-video{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+.reco-video > img{
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.reco-video1 p{
+    margin: 8px;
+}
+.grey{
+    color: grey;
+}
+
+/*5개 아이콘*/
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: flex-start;
+}
+.icon-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    color: grey;
+    gap: 4px;
+}
+.icon-button img{
+    width: 35px;
+    height: 35px;
+}
