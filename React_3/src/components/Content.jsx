@@ -1,8 +1,9 @@
 import useNumberStore from "../store/numberStore";
 
+import useNumberStore from "../store/numberStore";
+
 const Content = () => {
-  const { number, increase, decrease, reset } =
-  useNumberStore();
+  const { number, increase, decrease, reset } = useNumberStore();
 
   return (
     <>
