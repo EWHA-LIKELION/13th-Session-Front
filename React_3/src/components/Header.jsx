@@ -1,4 +1,5 @@
 import useNumberStore from '../store/numberStore';
+import useNumberStore from "../store/numberStore";
 
 const Header = () => {
   const { number } = useNumberStore();
