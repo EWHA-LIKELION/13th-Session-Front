@@ -23,16 +23,11 @@ const MainPage = () => {
   const getBookList = async () => {
     const token = localStorage.getItem("token");
 
-    try {
-      const response = await axios.get(`${BASE_URL}book/'`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      setBookList(response.data);
-    } catch (error) {
-      console.error(" 실패 ", error);
-    }
+    axios
+      .get("https://likelionbookapi.pythonanywhere.com/book/", {
+        headers: { Authorization: token && `Bearer ${token}` },
+      })
+      .then((response) => setBookList(response.data.data));
   };
 
   //---------------------------------------
