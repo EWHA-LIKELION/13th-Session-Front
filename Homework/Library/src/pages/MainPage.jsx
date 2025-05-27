@@ -20,7 +20,20 @@ const MainPage = () => {
 
   // 문제 2) axios를 사용하여 책 목록을 받아오는 API를 호출하는 getBookList 함수를 작성하기. (이때 받아온 데이터는 setBookList를 사용하여 bookList에 저장해주세요.)
 
-  const getBookList = async () => {};
+  const getBookList = async () => {
+    const token = localStorage.getItem("token");
+
+    try {
+      const response = await axios.get(`${BASE_URL}book/'`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      setBookList(response.data);
+    } catch (error) {
+      console.error(" 실패 ", error);
+    }
+  };
 
   //---------------------------------------
 
