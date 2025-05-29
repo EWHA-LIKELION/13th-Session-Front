@@ -23,11 +23,21 @@ const MainPage = () => {
   const getBookList = async () => {
     const token = localStorage.getItem("token");
 
-    axios
-      .get("https://likelionbookapi.pythonanywhere.com/book/", {
-        headers: { Authorization: token && `Bearer ${token}` },
+    axios({
+      method: "get",
+      url: `${BASE_URL}/book/`,
+      headers: {
+        Authorization: token && `Bearer ${token}`,
+      },
+    })
+      .then((response) => {
+        console.log("📦 응답 데이터:", response.data); // 반드시 찍어보세요!
+        setBookList(response.data.data);
       })
-      .then((response) => setBookList(response.data.data));
+      .catch((error) => {
+        console.error("❌ 책 리스트 가져오기 실패:", error.response?.data);
+        alert("책 정보를 불러오는 데 실패했습니다 ");
+      });
   };
 
   //---------------------------------------

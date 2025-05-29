@@ -21,13 +21,16 @@ const LoginPage = () => {
     axios({
       method: "post",
       url: `${BASE_URL}account/signin/`,
+      headers: {
+        "Content-Type": "application/json",
+      },
       data: {
         username: id,
         password: pw,
       },
     })
       .then((response) => {
-        const { nickname, access_token } = response.data;
+        const { nickname, access_token } = response.data.data;
         localStorage.setItem("userName", nickname);
         localStorage.setItem("token", access_token);
         navigate("/mypage");

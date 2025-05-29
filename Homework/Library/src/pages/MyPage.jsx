@@ -13,10 +13,14 @@ const MyPage = () => {
   //---------------------------------------
 
   // 문제 5) localStorage에서 userName 받아와서 변수에 저장하기
+  const userName = localStorage.getItem("userName");
 
   // 문제 6) 로그아웃 함수 작성하기
   const logout = () => {
     // localStorage에서 userName, token 삭제
+    localStorage.removeItem("userName");
+    localStorage.removeItem("token");
+    navigate("/login");
     // login 페이지로 이동
   };
 
@@ -27,9 +31,25 @@ const MyPage = () => {
   const BASE_URL = "https://likelionbookapi.pythonanywhere.com/";
 
   // 문제 7) 로컬 스토리지에서 token 값을 받아와 token 변수에 할당하기
+  const token = localStorage.getItem("token");
 
   // 문제 8) axios를 사용하여 좋아요한 책 목록을 받아오는 API를 호출하는 getLikedBooks 함수 작성하기 (이때 받아온 데이터는 setLikedBookList를 사용하여 likedBookList에 저장해주세요.)
-  const getLikedBooks = async () => {};
+  const getLikedBooks = async () => {
+    axios({
+      method: "get",
+      url: `${BASE_URL}book/scrap/`,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => {
+        setLikedBookList(response.data.data);
+      })
+      .catch((error) => {
+        console.error("스크랩한 책 불러오기 실패: ", error.response?.data);
+        alert(" 스크랩한 책 목록을 불러오는 데 실패했습니다.");
+      });
+  };
 
   //---------------------------------------
 
@@ -45,8 +65,7 @@ const MyPage = () => {
           <TopBar />
           <NameContainer>
             <img src="/book.png" alt="book" />
-            {/* userName이 잘 받아와졌다면 아래 주석을 해제해주세요. */}
-            {/* {userName}님 */}
+            {userName}님
           </NameContainer>
           <LogoutBtn onClick={logout}>로그아웃</LogoutBtn>
           <LikedContainer>
