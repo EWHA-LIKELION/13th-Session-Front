@@ -1,0 +1,206 @@
+/* 전체 배경 및 중앙 정렬 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #82ca8c; /* 배경 바로 이 색으로! */
+}
+
+/* 전체 컨테이너 */
+.container {
+  width: 100%;
+  max-width: 1200px; /* 선택사항: 너무 커지는 걸 방지 */
+  margin: 0 auto;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/* 상단 제목 */
+.header {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 40px;
+  color: #dd4343;
+  margin: 0;
+}
+
+/* 메인 박스 (좌우 정렬) */
+.main-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* 공통 박스 스타일 */
+.todo-box,
+.done-box {
+  width: 308.5px; /* svg 원본 너비 비율에 맞추기 */
+  height: 364px; /* svg 원본 높이 비율에 맞추기 */
+  background-image: url("./img/todo-card.svg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+  border: none;
+}
+
+.todo-box img,
+.done-box img {
+  width: 200px; /* 원하는 크기로 조절 가능 */
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.todo-list,
+.done-list {
+  margin: 20px 0 0 0;
+}
+
+.empty {
+  text-align: center;
+  color: #000;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* 플러스 버튼 (고정) */
+.plus-button {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  font-size: 36px;
+  background-color: #ffde59;
+  color: #dd4343;
+  cursor: pointer;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 전체 팝업 레이어 */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 650px;
+  background-color: #fffaf0;
+  border: 3px dashed #dd4343;
+  border-radius: 25px;
+  padding: 40px 30px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: none;
+  flex-direction: column;
+  gap: 30px; /* 요소 간 간격도 충분히 */
+}
+
+.popup.show {
+  display: flex;
+}
+
+.popup-title-img {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+/* 입력창 크기 크게!! */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 600px;
+  background-color: #fffaf0;
+  border: 3px dashed #c83838;
+  border-radius: 25px;
+  padding: 30px 25px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+/*  제목 이미지 */
+.popup-title-img {
+  width: 100%; /* 전체 너비 차지! */
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* 가운데 정렬 */
+}
+
+/*  입력창도 이미지 크기만큼!! */
+.popup-input {
+  width: 100%;
+  max-width: 500px; /* 제목 크기에 맞춤 */
+  height: 150px;
+  padding: 18px;
+  font-size: 18px;
+  border: 2px solid #222;
+  border-radius: 15px;
+  background-color: #d4e9c2;
+  text-align: center; /* 글씨도 센터 */
+}
+
+/* 버튼 위치 및 크기 조정 */
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.popup-buttons button {
+  flex: 1;
+  padding: 12px 0;
+  font-size: 16px;
+  background-color: #c83838;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+.popup-input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #c83838;
+  font-size: 16px;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popup-save,
+.popup-close {
+  background-color: #c83838;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.todo-list input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+}
