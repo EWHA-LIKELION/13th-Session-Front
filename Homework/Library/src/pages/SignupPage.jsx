@@ -17,8 +17,27 @@ const SignupPage = () => {
   //---------------------------------------
 
   // 문제 3) id, pw, name 정보를 data에 담아 post 방식으로 요청 보낸 후 성공 시 로그인 페이지로 이동
-
-  const goSignup = async () => {};
+  const goSignup = () => {
+    axios({
+      method: "post",
+      url: `${BASE_URL}account/signup/`, // 오타 수정
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: {
+        nickname: name,
+        username: id,
+        password: pw,
+      },
+    })
+      .then(() => {
+        navigate("/login");
+      })
+      .catch((error) => {
+        console.log(" 에러 상세:", error.response?.data);
+        alert("회원가입에 실패했습니다!");
+      });
+  };
 
   //---------------------------------------
 
