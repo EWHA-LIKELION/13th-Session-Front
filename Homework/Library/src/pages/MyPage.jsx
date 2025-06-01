@@ -2,37 +2,50 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 import axios from "axios";
-
-//components
-import TopBar from "../components/TopBar";
+import TopBar from "../components/TopBar"; //components
 import Book from "../components/Book";
 
-const MyPage = () => {
+  const MyPage = () => {
   const navigate = useNavigate();
 
-  //---------------------------------------
 
+//――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
   // 문제 5) localStorage에서 userName 받아와서 변수에 저장하기
+  const userName = localStorage.getItem("userName");
+
 
   // 문제 6) 로그아웃 함수 작성하기
   const logout = () => {
     // localStorage에서 userName, token 삭제
+    localStorage.removeItem("userName");
+    localStorage.removeItem("token");
     // login 페이지로 이동
+    navigate("/login");
   };
+
 
   // 좋아요한 책 목록을 저장할 state
   const [likedBookList, setLikedBookList] = useState([]);
   const [render, setRender] = useState(1);
-
   const BASE_URL = "https://likelionbookapi.pythonanywhere.com/";
 
   // 문제 7) 로컬 스토리지에서 token 값을 받아와 token 변수에 할당하기
+  const token = localStorage.getItem("token");
 
-  // 문제 8) axios를 사용하여 좋아요한 책 목록을 받아오는 API를 호출하는 getLikedBooks 함수 작성하기 (이때 받아온 데이터는 setLikedBookList를 사용하여 likedBookList에 저장해주세요.)
-  const getLikedBooks = async () => {};
+  // 문제 8) axios를 사용하여 좋아요한 책 목록을 받아오는 API를 호출하는 getLikedBooks 함수 작성하기 
+  //  ㅤ ㅤ  (이때 받아온 데이터는 setLikedBookList를 사용하여 likedBookList에 저장해주세요.)
+  const getLikedBooks = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}book/scrap/`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      setLikedBookList(response.data.data);
+    } catch (err) {
+      console.error("Error : 스크랩 목록 불러오기 실패", err);
+    }
+  };
 
-  //---------------------------------------
-
+//――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
   // ⬇️ 컴포넌트가 마운트될 때 getLikedBooks 함수를 호출하는 코드
   useEffect(() => {
     getLikedBooks();
@@ -45,8 +58,7 @@ const MyPage = () => {
           <TopBar />
           <NameContainer>
             <img src="/book.png" alt="book" />
-            {/* userName이 잘 받아와졌다면 아래 주석을 해제해주세요. */}
-            {/* {userName}님 */}
+            {userName}님
           </NameContainer>
           <LogoutBtn onClick={logout}>로그아웃</LogoutBtn>
           <LikedContainer>

@@ -2,24 +2,37 @@ import { useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-
-//components
-import TopBar from "../components/TopBar";
+import TopBar from "../components/TopBar"; //components
 
 const LoginPage = () => {
   const navigate = useNavigate();
   const [id, setID] = useState();
   const [pw, setPW] = useState();
-
   const BASE_URL = "https://likelionbookapi.pythonanywhere.com/";
 
-  //---------------------------------------
 
-  // 문제 4) id, pw 정보를 data에 담아 post 방식으로 요청 보낸 후, 성공 시 userName, token을 key로 하여 받아온 데이터의 nickname, access_token 정보를 localStorage에 저장하고 mypage로 이동시키기
+//――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+  // 문제 4) id, pw 정보를 data에 담아 post 방식으로 요청 보낸 후, 
+  // ㅤ ㅤ ㅤ성공 시 userName, token을 key로 하여 
+  // ㅤ ㅤ ㅤ받아온 데이터의 nickname, access_token 정보를 localStorage에 저장하고 mypage로 이동시키기
+  const goLogin = async () => {
+    try {
+      const data = {
+        username: id,
+        password: pw,
+      };
+      const response = await axios.post(`${BASE_URL}account/signin/`, data);
+      console.log(response);
+      const { nickname, access_token } = response.data.data;
+      localStorage.setItem("userName", nickname);
+      localStorage.setItem("token", access_token);
+      navigate("/mypage");
+    } catch (error) {
+      console.error("Error : 로그인 실패", error);
+    }
+  };
 
-  const goLogin = async () => {};
-
-  //---------------------------------------
+//―――――――――――――――――――――――――――――――――――――――――――――――――
 
   return (
     <>
