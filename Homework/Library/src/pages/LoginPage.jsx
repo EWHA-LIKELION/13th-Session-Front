@@ -8,8 +8,8 @@ import TopBar from "../components/TopBar";
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  const [id, setID] = useState();
-  const [pw, setPW] = useState();
+  const [id, setID] = useState("");
+  const [pw, setPW] = useState("");
 
   const BASE_URL = "https://likelionbookapi.pythonanywhere.com/";
 
@@ -17,7 +17,26 @@ const LoginPage = () => {
 
   // 문제 4) id, pw 정보를 data에 담아 post 방식으로 요청 보낸 후, 성공 시 userName, token을 key로 하여 받아온 데이터의 nickname, access_token 정보를 localStorage에 저장하고 mypage로 이동시키기
 
-  const goLogin = async () => {};
+  const goLogin = async () => {
+    try {
+      const response = await axios({
+        method: "post",
+        url: `${BASE_URL}account/signin/`,
+        data: { username: id, password: pw },
+      });
+      //응답 찍어보기
+      console.log("로그인 응답 데이터:", response.data);
+      const { nickname, access_token } = response.data.data;
+
+      localStorage.setItem("userName", nickname);
+      localStorage.setItem("token", access_token);
+      console.log("저장된 토큰:", localStorage.getItem("token"));
+      navigate("/mypage");
+    } catch (error) {
+      console.error("로그인 실패:", error);
+      alert("아이디 또는 비밀번호를 확인해주세요");
+    }
+  };
 
   //---------------------------------------
 

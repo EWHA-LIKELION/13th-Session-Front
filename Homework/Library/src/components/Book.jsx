@@ -10,11 +10,36 @@ const Book = ({ book, render, setRender }) => {
   const BASE_URL = "https://likelionbookapi.pythonanywhere.com/";
 
   //---------------------------------------
-
   // 문제 9) 책 스크랩 함수 작성하기
-  const handleLikeBook = () => {
+  const handleLikeBook = async () => {
+    console.log("handleLikeBook 실행됨 (book.id:", book.id, ")");
     // 로컬 스토리지에서 token 값을 받아와 token 변수에 할당
     // 토큰이 존재하면 axios를 사용하여 좋아요 여부 변경 API를 호출하고, 그게 아니면 navigate를 사용하여 로그인 페이지로 이동
+    const token = localStorage.getItem("token");
+    console.log(" 토큰 값:", token);
+    if (!token) {
+      navigate("/login");
+      return;
+    }
+
+    try {
+      console.log(
+        "   ↳ PATCH 요청 보냄 →",
+        `${BASE_URL}book/scrap/${book.id}/`
+      );
+      const response = await axios({
+        method: "patch",
+        url: `${BASE_URL}book/scrap/${book.id}/`,
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      console.log("PATCH 응답:", response.data);
+      setRender(render + 1);
+    } catch (error) {
+      console.error("책 스크랩 토글 실패:", error);
+    }
   };
 
   //---------------------------------------
