@@ -216,10 +216,9 @@ body > .info {
 }
 
 .recommended .item img {
-    flex: 1 1 45%
+    flex: 1 1 45%;
     margin-right: var(--padding);
 }
-
 .recommended .item .img img {
     width: 100%;
 }
@@ -249,7 +248,7 @@ body > .info {
 
 .grid-container {
     display: grid;
-    grid-template-colums: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 10px;
 }
