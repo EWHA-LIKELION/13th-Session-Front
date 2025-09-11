@@ -8,13 +8,35 @@
 //   scope: 필요한 동의항목 (예: "account_email,profile_nickname")
 //   state: window.location.origin (로그인 완료 후 돌아올 앱 주소)
 
-export default function Login() {
-	const login = () => {
-		// TODO: 여기에 카카오 authorize URL을 생성하는 코드를 작성하세요.
-		// 예시(의사코드):
-		// const params = new URLSearchParams({ ...위 파라미터들... })
-		// window.location.href = `https://kauth.kakao.com/oauth/authorize?${params.toString()}`
-	};
+// export default function Login() {
+// 	const login = () => {
+// 		// TODO: 여기에 카카오 authorize URL을 생성하는 코드를 작성하세요.
+// 		// 예시(의사코드):
+// 		// const params = new URLSearchParams({ ...위 파라미터들... })
+// 		// window.location.href = `https://kauth.kakao.com/oauth/authorize?${params.toString()}`
+// 	};
 
-	return <button onClick={login}>카카오로 로그인</button>;
+// 	return <button onClick={login}>카카오로 로그인</button>;
+// }
+
+
+export default function Login() {
+  const login = () => {
+    const clientId = import.meta.env.VITE_KAKAO_REST_API_KEY;
+    const redirectUri = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/kakao-login`;
+    const scope = "account_email,profile_nickname";
+    const state = window.location.origin;
+
+    const params = new URLSearchParams({
+      client_id: clientId,
+      redirect_uri: redirectUri,
+      response_type: "code",
+      scope,
+      state,
+    });
+
+    window.location.href = `https://kauth.kakao.com/oauth/authorize?${params.toString()}`;
+  };
+
+  return <button onClick={login}>카카오로 로그인</button>;
 }
