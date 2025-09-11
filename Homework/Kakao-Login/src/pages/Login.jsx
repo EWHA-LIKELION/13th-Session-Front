@@ -7,7 +7,7 @@
 //   response_type: "code"
 //   scope: 필요한 동의항목 (예: "account_email,profile_nickname")
 //   state: window.location.origin (로그인 완료 후 돌아올 앱 주소)
-
+//
 export default function Login() {
   const login = () => {
     const params = new URLSearchParams({
