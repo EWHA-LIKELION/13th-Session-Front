@@ -15,7 +15,7 @@ export default function Login() {
     await supabase.auth.signInWithOAuth({
       provider: "kakao",
       options: {
-        redirectTo: `${origin}/auth/callback?next=${encodeURIComponent(next)}`,
+        redirectTo: `${origin}/auth/callback?next=/profile`,
         scopes: "account_email profile_nickname profile_image",
       },
     });
