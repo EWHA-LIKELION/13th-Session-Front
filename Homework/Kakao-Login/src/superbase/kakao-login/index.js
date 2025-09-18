@@ -11,7 +11,7 @@ async function getAccessTokenFromCode(reqUrl) {
 	const code = searchParams.get("code");
 	if (!code) return null;
 
-	const redirectUri = `${origin}${pathname}`; // 이 함수의 퍼블릭 URL과 동일해야 함
+	const redirectUri = `${origin}${pathname}`;
 	const body = new URLSearchParams({
 		grant_type: "authorization_code",
 		client_id: KAKAO_CLIENT_ID,

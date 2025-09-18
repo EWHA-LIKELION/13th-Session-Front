@@ -15,13 +15,21 @@ function App() {
       },
     })
       .then((response) => {
+<<<<<<< HEAD
         console.log(response);
+=======
+        console.log(response.data);
+>>>>>>> upstream/main
       })
 
       .catch((error) => {
         console.log(error);
         throw new Error(error);
+<<<<<<< HEAD
       })
+=======
+      });
+>>>>>>> upstream/main
   };
 
   // GET 예제 (1) (LIST USERS)
@@ -34,7 +42,11 @@ function App() {
       url: "https://reqres.in/api/users?page=2",
     })
       .then((response) => {
+<<<<<<< HEAD
         console.log(response);
+=======
+        console.log(response.data.data);
+>>>>>>> upstream/main
       })
 
       .catch((error) => {
@@ -42,6 +54,10 @@ function App() {
         throw new Error(error);
       });
   };
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/main
   // GET 예제 (2) (SINGLE USER)
   const getSecond = () => {
     axios({
@@ -52,9 +68,13 @@ function App() {
       url: "https://reqres.in/api/users/2",
     })
       .then((response) => {
+<<<<<<< HEAD
         console.log(response.data.data.
         last_name
         );
+=======
+        console.log(response.data.data.last_name);
+>>>>>>> upstream/main
       })
 
       .catch((error) => {
@@ -62,6 +82,10 @@ function App() {
         throw new Error(error);
       });
   };
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/main
   // GET 예제 (3) (SINGLE USER NOT FOUND)
   const getThird = () => {
     axios({
