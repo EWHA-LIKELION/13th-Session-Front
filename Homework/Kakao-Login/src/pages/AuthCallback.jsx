@@ -60,30 +60,19 @@ const AuthCallback = () => {
         return;
       }
 
-
-      const oob = url.searchParams.get("oob_code");
-      const email = url.searchParams.get("email");
-      const type = url.searchParams.get("type") || "magiclink";
-
-      if (oob && email) {
-        const { error: otpError } = await supabase.auth.verifyOtp({
-          email,
-          token: oob,
-          type,
-        });
-
-        if (otpError) {
-          setMessage(`세션 생성 실패: ${otpError.message}`);
-          return;
-        }
-
-        const { data: sessionData } = await supabase.auth.getSession();
-        if (sessionData.session) {
-          setMessage("로그인 성공! 이동 중...");
-          navigate(next, { replace: true });
-          return;
-        }
-      }
+			// TODO: 인가코드(code)로 세션을 교환하세요.
+			// 힌트: const code = url.searchParams.get('code')
+			// 힌트: await supabase.auth.exchangeCodeForSession(code)
+			// 에러가 있으면 setMessage로 표시하고 return 하세요.
+			// 아래는 예시 형태입니다.
+			// const code = url.searchParams.get('code');
+			// if (code) {
+			// 	const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(code);
+			// 	if (exchangeError) {
+			// 		setMessage(`세션 생성 실패: ${exchangeError.message}`);
+			// 		return;
+			// 	}
+			// }
 
       const { data } = await supabase.auth.getSession();
       if (data.session) {

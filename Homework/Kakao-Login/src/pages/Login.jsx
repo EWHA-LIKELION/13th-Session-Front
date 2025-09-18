@@ -1,41 +1,26 @@
-// 과제 안내
-// - 아래 login 함수 내부를 구현하세요.
-// - 목표: 카카오 인가 URL을 만들어 window.location.href로 리다이렉트합니다.
-// - 파라미터:
-//   client_id: import.meta.env.VITE_KAKAO_REST_API_KEY (카카오 REST API 키)
-//   redirect_uri: `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/kakao-login`
-//   response_type: "code"
-//   scope: 필요한 동의항목 (예: "account_email,profile_nickname")
-//   state: window.location.origin (로그인 완료 후 돌아올 앱 주소)
-
-// export default function Login() {
-// 	const login = () => {
-// 		// TODO: 여기에 카카오 authorize URL을 생성하는 코드를 작성하세요.
-// 		// 예시(의사코드):
-// 		// const params = new URLSearchParams({ ...위 파라미터들... })
-// 		// window.location.href = `https://kauth.kakao.com/oauth/authorize?${params.toString()}`
-// 	};
-
-// 	return <button onClick={login}>카카오로 로그인</button>;
-// }
+//import { supabase } from "../superbase/client";
 
 export default function Login() {
-  const login = () => {
-    const clientId = import.meta.env.VITE_KAKAO_REST_API_KEY;
-    const redirectUri = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/kakao-login`;
-    const scope = "account_email,profile_nickname";
-    const state = window.location.origin;
+	const login = async () => {
+		// TODO: 아래 주석을 보고 코드를 완성하세요.
+		// 1) origin을 구합니다. (힌트: window.location.origin)
+		// 2) supabase.auth.signInWithOAuth를 호출합니다.
+		//    - provider: 'kakao'
+		//    - options.redirectTo: `${origin}/auth/callback?next=/profile`
+		//    - options.scopes: 'account_email profile_nickname profile_image'
 
-    const params = new URLSearchParams({
-      client_id: clientId,
-      redirect_uri: redirectUri,
-      response_type: "code",
-      scope,
-      state,
-    });
+		// 예시)
+		// const origin = ...;
+		// await supabase.auth.signInWithOAuth({
+		// 	provider: 'kakao',
+		// 	options: {
+		// 		redirectTo: `${origin}/auth/callback?next=/profile`,
+		// 		scopes: 'account_email profile_nickname profile_image',
+		// 	},
+		// });
 
-    window.location.href = `https://kauth.kakao.com/oauth/authorize?${params.toString()}`;
-  };
+		alert("TODO: 로그인 로직을 구현해 보세요 (파일: Login.jsx)");
+	};
 
   return <button onClick={login}>카카오로 로그인</button>;
 }
