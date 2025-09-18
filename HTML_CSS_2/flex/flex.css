@@ -6,17 +6,23 @@
   height: 200px;
   display: flex;
   /* 1번 문제, 아래에 코드를 추가하세요 */
+  justify-content: space-between;
+  align-items: flex-end;
 }
 .container3 {
   height: 200px;
   display: flex;
   flex-direction: column;
   /* 2번 문제, 아래에 코드를 추가하세요 */
+  justify-content: space-evenly;
+  align-items: center;
 }
 .container4 {
   height: 200px;
   display: flex;
   /* 3번 문제, 아래에 코드를 추가하세요 */
+  justify-content: center;
+  align-items: center;
 }
 /* 아래는 수정 X */
 div {
