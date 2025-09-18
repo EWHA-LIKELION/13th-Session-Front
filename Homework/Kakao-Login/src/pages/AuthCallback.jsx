@@ -17,27 +17,22 @@ const AuthCallback = () => {
         return;
       }
 
-      // Edge Function이 반환한 oob_code가 쿼리에 있을 수도 있음
-      const oob = url.searchParams.get("oob_code");
-      const email = url.searchParams.get("email");
-      const type = url.searchParams.get("type") || "magiclink";
-
-      // oob_code와 email이 존재하면 Supabase 세션을 생성
-      // Edge Function이 반환한 oob_code가 쿼리에 있을 수도 있음
-      if (oob && email) {
-        const { error } = await supabase.auth.verifyOtp({
-          // const { error } = await supabase.auth.verifyOtp({ ... })
-          // 힌트: supabase.auth.verifyOtp({ email, token: oob, type }) 사용
-          email,
-          token: oob,
-          type,
-        });
-
-        // if (error) { setMessage(...); return; }
-        if (error) {
-          setMessage(`인증 실패: ${error.message}`);
+      // 인가코드(code)로 세션을 교환
+      const code = url.searchParams.get("code");
+      if (code) {
+        const { error: exchangeError } =
+          await supabase.auth.exchangeCodeForSession(code);
+        if (exchangeError) {
+          setMessage(`세션 생성 실패: ${exchangeError.message}`);
           return;
         }
+      }
+
+      const { data } = await supabase.auth.getSession();
+      if (data.session) {
+        navigate(next, { replace: true });
+      } else {
+        setMessage("세션이 없습니다. 다시 로그인 해주세요.");
       }
     })();
   }, [navigate]);
